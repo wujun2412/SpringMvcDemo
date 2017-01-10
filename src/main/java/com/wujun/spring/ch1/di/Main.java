@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DiConfig.class);
         UseFunctionService functionService = context.getBean(UseFunctionService.class);
-        System.out.println(functionService.sayHello("wujun"));
+        System.out.println(functionService.sayHello("world"));
         context.close();
     }
 }
