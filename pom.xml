@@ -11,6 +11,10 @@
     <properties>
         <!--spring-->
         <springframework.version>4.2.5.RELEASE</springframework.version>
+
+        <!--aop-->
+        <aspectj.version>1.8.9</aspectj.version>
+
         <!--基本配置-->
         <compiler.version>1.7</compiler.version>
         <plugin.maven-compiler.version>3.3</plugin.maven-compiler.version>
@@ -29,6 +33,16 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
 
     </dependencies>
