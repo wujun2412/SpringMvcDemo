@@ -12,6 +12,8 @@
         <!--spring-->
         <springframework.version>4.2.5.RELEASE</springframework.version>
 
+        <commons-io.version>2.4</commons-io.version>
+
         <!--aop-->
         <aspectj.version>1.8.9</aspectj.version>
 
@@ -43,6 +45,11 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
         </dependency>
 
     </dependencies>
