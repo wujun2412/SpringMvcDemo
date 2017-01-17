@@ -10,8 +10,10 @@ public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ElConfig.class);
 
-        ElConfig elConfig = context.getBean(ElConfig.class);
-        elConfig.outputResource();
+        //ElConfig elConfig = context.getBean(ElConfig.class);
+        DemoService demoService = context.getBean(DemoService.class);
+        System.out.println(demoService.getProperties("book2.test"));
+        //elConfig.outputResource();
         context.close();
     }
 }

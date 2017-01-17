@@ -3,11 +3,9 @@ package com.wujun.spring.ch2.el;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 
@@ -18,7 +16,7 @@ import java.io.IOException;
  */
 @Configuration
 @ComponentScan("com.wujun.spring.ch2.el")
-@PropertySource("classpath:test.properties")
+@PropertySource({"classpath:test.properties","classpath:test2.properties"})
 public class ElConfig {
     @Value("I Love you!")
     private String normal;
@@ -38,13 +36,16 @@ public class ElConfig {
     @Value("${book.name}")
     private String bookName;
 
+    @Value("${book2.name}")
+    private String bookName2;
+
     @Autowired
     private Environment environment;
 
-    @Bean
+    /*@Bean
     public static PropertySourcesPlaceholderConfigurer propertyConfig(){
         return  new PropertySourcesPlaceholderConfigurer();
-    }
+    }*/
 
     public void outputResource() {
         try {
@@ -55,7 +56,7 @@ public class ElConfig {
             System.out.println(IOUtils.toString(testUrl.getInputStream()));
             System.out.println(bookName);
             System.out.println(environment.getProperty("book.author"));
-
+            System.out.println(bookName2);
         } catch (IOException e) {
             e.printStackTrace();
         }
